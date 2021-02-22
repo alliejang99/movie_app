@@ -5,8 +5,6 @@ React JS fundamentals Course (2021 Update!)
 
 ## 2021.02.22 (3.2 Done!)
 
-import React from "react";
-
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -30,7 +28,7 @@ class App extends React.Component{
     console.log("Good bye Cruel world");
   }
   /*
-  실행 - RenderMount
+  render를 하면 호출되는 life cycle methood - RenderMount
   setState - RenderUpdate
   페이지 나갈 때 - WillUmnount
   */
@@ -49,3 +47,53 @@ class App extends React.Component{
 
 export default App;
 
+## 2021.02.22 (3.3 Done!)
+
+class App extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  state = {
+    isLoading: true,
+    movies: []
+  };
+  
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 6000);
+  }
+ 
+  render(){
+    const { isLoading } = this.state
+    return 	&lt;div&gt;{isLoading ? "Loading..." : "We are ready"}	&lt;/div&gt;;
+      
+  }
+}
+
+## 2021.02.22 (3.4 Done!)
+import axios from "axios";
+
+class App extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  state = {
+    isLoading: true,
+    movies: []
+  };
+  
+  getMovies = async () => {
+    const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+  }
+
+  componentDidMount(){
+    this.getMovies();
+  }
+ 
+  render(){
+    const { isLoading } = this.state
+    return &lt;div&gt;{isLoading ? "Loading..." : "We are ready"}&lt;/div&gt;;
+      
+  }
+}

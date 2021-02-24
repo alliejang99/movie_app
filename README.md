@@ -47,53 +47,8 @@ class App extends React.Component{
 
 export default App;
 
-## 2021.02.22 (3.3 Done!)
-
-class App extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  state = {
-    isLoading: true,
-    movies: []
-  };
-  
-  componentDidMount(){
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 6000);
-  }
- 
-  render(){
-    const { isLoading } = this.state
-    return 	&lt;div&gt;{isLoading ? "Loading..." : "We are ready"}	&lt;/div&gt;;
-      
-  }
-}
-
-## 2021.02.22 (4.0 Done!)
-import axios from "axios";
-
-class App extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  state = {
-    isLoading: true,
-    movies: []
-  };
-  
-  getMovies = async () => {
-    const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");
-  }
-
-  componentDidMount(){
-    this.getMovies();
-  }
- 
-  render(){
-    const { isLoading } = this.state
-    return &lt;div&gt;{isLoading ? "Loading..." : "We are ready"}&lt;/div&gt;;
-      
-  }
-}
+## 2021.02.24 (5.0)
+- npm i gh-pages
+- pakage.js + ("homepage" : "link")
+- pakage.js +  ("deploy": "gh-pages -d build"), ("predeploy": "npm run build")
+- npm run build

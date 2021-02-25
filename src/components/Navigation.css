@@ -1,0 +1,23 @@
+
+a {
+    text-decoration: none;
+    display: block;
+    color: blue;
+}
+.nav {
+    position: fixed;
+    top: 40px;
+    left: 10px;
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+    background: #fff;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}

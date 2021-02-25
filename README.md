@@ -52,3 +52,21 @@ export default App;
 - pakage.js + ("homepage" : "link")
 - pakage.js +  ("deploy": "gh-pages -d build"), ("predeploy": "npm run build")
 - npm run build
+
+## 2021.02.25 (6.1)
+import React from "react";
+import { HashRouter, Route } from "react-router-dom"; // Router 종류
+import About from "./routes/About";
+import Home from "./routes/Home";
+
+function App() {
+  return (
+    <HashRouter>
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/about" component={About} />
+    </HashRouter> 
+  )
+}
+
+export default App;
+

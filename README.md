@@ -3,7 +3,7 @@
 React JS fundamentals Course (2021 Update!)
 
 
-## 2021.02.22 (3.2 Done!)
+## 2021.02.22 (3.2)
 
 class App extends React.Component{
   constructor(props){
